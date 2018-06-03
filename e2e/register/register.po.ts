@@ -1,5 +1,5 @@
 import {browser, by, element} from 'protractor';
-import axios from "axios";
+import axios from 'axios';
 import {AxiosInstance} from "axios";
 import {UserReq} from '../requests/user.req';
 
@@ -16,7 +16,7 @@ export class RegisterPage {
   async deleteUser(login: any) {
     await UserReq.delete(login);
   }
-  
+
   fillUser(user: any) {
     element(by.css('[name="name"]')).sendKeys(user.name);
     element(by.css('[name="firstName"]')).sendKeys(user.firstName);

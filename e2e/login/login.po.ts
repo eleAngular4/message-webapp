@@ -5,7 +5,7 @@ export class LoginPage {
 
   readonly UNSERNAME: 'admin';
   readonly PASSWORD: 'admin';
-  
+
   const user = {
     name: 'admin',
     firstName: 'admin',

@@ -1,5 +1,5 @@
-import { LoginPage } from './login.po';
-import { MessagesPage } from '../messages/messages.po';
+import {LoginPage} from './login.po';
+import {MessagesPage} from '../messages/messages.po';
 
 fdescribe('Protractor test - Login loginPage', () => {
   let loginPage: LoginPage;
@@ -19,7 +19,7 @@ fdescribe('Protractor test - Login loginPage', () => {
   afterEach(() => {
     loginPage.deleteUser();
   });
-  
+
   it('when user trying to login with wrong credentials he should stay on “login” loginPage and see error notification', () => {
     loginPage.navigateTo();
     expect(loginPage.getPageTitleText()).toEqual('Login');
