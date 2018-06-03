@@ -1,0 +1,21 @@
+<div class="container">
+	<div class="row">
+	  <div class="col-xs-12">
+	    <h2>Messages</h2>
+	    <ul class="list-group" *ngFor="let message of messages">
+	    	<li [ngClass]="{'list-group-item': true,
+	                		'list-group-item-success': true}">
+ 				  <h4>{{ message.beginDate | date: 'dd/MM/yyyy' }} </h4>
+				  <h4>{{ message.endDate | date: 'dd/MM/yyyy' }} </h4>
+				  <h4>{{ message.title }} </h4>
+				  <h4>{{ message.content }} </h4>
+				  <button class="btn btn-success" (click)="onModify(message)">Consulter</button>
+				  <button class="btn btn-success" (click)="onDetail(message)">Modifier</button>
+				  <button class="btn btn-danger" (click)="deleteMessage(message)">Suprimer</button>
+			</li>
+		</ul>
+	    <button class="btn btn-primary" (click)="onNewMessage()">Nouveau message</button>
+	    <button class="btn btn-primary" (click)="logout()">Deconnecter</button>
+	  </div>
+	</div>
+</div>
