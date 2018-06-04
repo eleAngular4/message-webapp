@@ -110,7 +110,7 @@ describe('LoginComponent', () => {
 
 
   it('submit login form with valid credentials should return a token', async(() => {
-    const response: Token;
+    let response: Token;
 
     expect(component.loginForm.valid).toBeFalsy();
     component.loginForm.controls['username'].setValue('login');
@@ -130,6 +130,7 @@ describe('LoginComponent', () => {
   }));
 
   it('#login should return error message if login and password are invalid', async(() => {
+    let response: Token;
     expect(component.loginForm.valid).toBeFalsy();
     component.loginForm.controls['username'].setValue('logindfbsdfbgdf');
     component.loginForm.controls['password'].setValue('password');

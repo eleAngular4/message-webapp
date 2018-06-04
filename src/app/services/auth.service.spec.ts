@@ -104,7 +104,7 @@ describe('AuthService', () => {
   it('#isAuthenticated should return true when there is valid token object in localStorage', () => {
     const date = new Date();
     date.setDate(date.getDate() + 1);
-    const token = new Token(value, date, user);
+    const token = new Token(valueToken, date, user);
     localStorageService.saveToken(token);
     expect(authService.isAuthenticated()).toEqual(true);
   });
@@ -112,7 +112,7 @@ describe('AuthService', () => {
   it('#isAuthenticated should return false when there is invalid token object in localStorage', () => {
     const date = new Date();
     date.setDate(date.getDate() - 1);
-    const token = new Token(value, date, user);
+    const token = new Token(valueToken, date, user);
     localStorageService.saveToken(token);
     expect(authService.isAuthenticated()).toEqual(false);
   });
