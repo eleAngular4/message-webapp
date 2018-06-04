@@ -87,7 +87,7 @@ describe('LoginComponent', () => {
     errors = username.errors || {};
     expect(errors['required']).toBeTruthy();
 
-    // Set username to something 
+    // Set username to something
     username.setValue('test');
     errors = username.errors || {};
     expect(errors['required']).toBeFalsy();
@@ -102,7 +102,7 @@ describe('LoginComponent', () => {
     errors = password.errors || {};
     expect(errors['required']).toBeTruthy();
 
-    // Set password to something 
+    // Set password to something
     password.setValue('password');
     errors = password.errors || {};
     expect(errors['required']).toBeFalsy();

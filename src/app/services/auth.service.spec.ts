@@ -83,10 +83,10 @@ describe('AuthService', () => {
     date.setDate(date.getDate() + 1);
     const token = new Token(valueToken, date, user);
     authService.login(login, password)
-      .catch(error => {
-        expect(Observable.of(error)).toBeTruthy();
-        expect(error).toBeTruthy();
-        return Observable.of(error);
+      .catch(errorService => {
+        expect(Observable.of(errorService)).toBeTruthy();
+        expect(errorService).toBeTruthy();
+        return Observable.of(errorService);
       })
       .subscribe(() => {});
     const request = httpMock.expectOne(authService.API_LOGIN);
