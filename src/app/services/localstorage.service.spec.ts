@@ -7,8 +7,8 @@ import {Token} from '../models/token';
 describe('LocalStorageService', () => {
   let injector: Injector;
   let localStorageService: LocalStorageService;
-  const value = 'value';
-  const dateExpiration = new Date();;
+  const valueToken = 'value';
+  const dateExpiration = new Date();
   const user = new User('name', 'firstName', 'login', 'password', 'USERS');
 
   beforeEach(() => {
@@ -21,8 +21,8 @@ describe('LocalStorageService', () => {
       getItem: (key: string): string => {
         return key in store ? store[key] : null;
       },
-      setItem: (key: string, value: string) => {
-        store[key] = `${value}`;
+      setItem: (key: string, valueItem: string) => {
+        store[key] = `${valueItem}`;
       },
       removeItem: (key: string) => {
         delete store[key];
@@ -45,7 +45,7 @@ describe('LocalStorageService', () => {
   });
 
   it('#saveToken should insert token into localStorage', () => {
-    const token = new Token(value, dateExpiration, user);
+    const token = new Token(valueToken, dateExpiration, user);
     localStorageService.saveToken(token);
     expect(localStorage.getItem(localStorageService.TOKEN)).toEqual(JSON.stringify(token));
   });
@@ -56,7 +56,7 @@ describe('LocalStorageService', () => {
   });
 
   it('#getToken should return a token', () => {
-    const token = new Token(value, dateExpiration, user);
+    const token = new Token(valueToken, dateExpiration, user);
     localStorageService.saveToken(token);
     expect(localStorage.getItem(localStorageService.TOKEN)).toEqual(JSON.stringify(localStorageService.getToken()));
   });

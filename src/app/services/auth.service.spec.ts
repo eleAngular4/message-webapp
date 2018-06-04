@@ -11,7 +11,7 @@ import {Observable} from 'rxjs/Observable';
 describe('AuthService', () => {
   const login = 'LOGIN';
   const password = 'PASSWORD';
-  const value = 'value';
+  const valueToken = 'value';
   const user = new User('name', 'firstName', login, password, 'USERS');
   let injector: Injector;
   let localStorageService: LocalStorageService;
@@ -59,7 +59,7 @@ describe('AuthService', () => {
   it('#login should return a token object', () => {
     const date = new Date();
     date.setDate(date.getDate() + 1);
-    const token = new Token(value, date, user);
+    const token = new Token(valueToken, date, user);
     authService.login(login, password)
       .subscribe(tokenResult => {
         expect(Observable.of(tokenResult)).toBeTruthy();
@@ -81,7 +81,7 @@ describe('AuthService', () => {
     const error = 'Unauthorized';
     const date = new Date();
     date.setDate(date.getDate() + 1);
-    const token = new Token(value, date, user);
+    const token = new Token(valueToken, date, user);
     authService.login(login, password)
       .catch(error => {
         expect(Observable.of(error)).toBeTruthy();

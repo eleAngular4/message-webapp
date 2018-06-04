@@ -130,8 +130,6 @@ describe('LoginComponent', () => {
   }));
 
   it('#login should return error message if login and password are invalid', async(() => {
-    cont response: Token;
-
     expect(component.loginForm.valid).toBeFalsy();
     component.loginForm.controls['username'].setValue('logindfbsdfbgdf');
     component.loginForm.controls['password'].setValue('password');

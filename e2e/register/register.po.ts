@@ -1,6 +1,5 @@
 import {browser, by, element} from 'protractor';
-import axios from 'axios';
-import {AxiosInstance} from "axios";
+import {axios, AxiosInstance} from 'axios';
 import {UserReq} from '../requests/user.req';
 
 export class RegisterPage {
